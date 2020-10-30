@@ -29,6 +29,7 @@ gateway:
   hostName: "gateway.tykbeta.com"
   tls: true
   containerPort: 8080
+  controlApiPort: 9696
   tags: "ingress"
   image:
     repository: tykio/tyk-gateway
@@ -37,6 +38,7 @@ gateway:
   service:
     type: LoadBalancer
     port: 443
+    controlApiPort: 9696
     externalTrafficPolicy: Local
     annotations: {}
   ingress:
